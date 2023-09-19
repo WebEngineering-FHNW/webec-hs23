@@ -5,9 +5,10 @@
 [Storybook frame](https://webengineering-fhnw.github.io/webec-hs23/week01/Storybook.html)
 
 ## Assignment 1: 
-Using github as a web server
-- create a github account if you haven't one already
-- create a github repository
+Using gitHub as a web server
+- create a gitHub account if you haven't one already
+- create a gitHub repository
+- setup gitHub "pages" under "settings"
 - copy Example.html into the /docs folder of that repo
 - Change Example.html document, git commit, push
 - view change in browser
