@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Storybook for the Web Engineering Module</title>
+	<style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+    
+        h1 {
+          font-size: 24px;
+          font-weight: bold;
+          color: #333;
+        }
+    
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+          color: #555;
+        }
+    
+        section {
+          padding: 20px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+        }
+    
+        article {
+          margin-bottom: 10px;
+        }
+    
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+    
+        th, td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+        }
+    
+        th {
+          background-color: #f0f0f0;
+        }
+    
+        td {
+          background-color: #fff;
+        }
+
+        abbr, dfn {
+            position: relative;
+            border-bottom: 1px dotted #333;
+            cursor: help;
+        }
+
+        abbr::after, dfn::after {
+            content: "?"; /* Question mark icon */
+            display: inline-block;
+            width: 0.8em;
+            height: 0.8em;
+            margin-left: 0.2em;
+            position: absolute;
+            top: 120%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 0.8em;
+            cursor: pointer;
+        }
+
+        abbr:hover::after, dfn:hover::after {
+            content: attr(title); /* Display the title as the content */
+            white-space: nowrap;
+        }
+
+        .holiday {
+            color: #777; /* Less prominent color for holidays */
+        }
+
+        .exercise {
+            font-weight: bold;
+            color: #007BFF; /* More prominent color for exercise-related dates */
+        }
+      </style>
+</head>
+
+<body>
+    <header>
+        <dfn title="Drehbuch">Storybook</dfn> for the Web Engineering Module
+    </header>
+    <main>
+        <section id="context">
+            <h1>Module delivery mode</h1>
+            <p> This installment of the <dfn title="WebEngineering">webeC</dfn> module.
+            </p>
+
+        </section>
+        <section id="content">
+            <h1>Delivery dates and examination details</h1>
+            <article>
+                <h2>Overview</h2>
+                <table>
+                    <caption>Delivery dates</caption>
+                    <thead>
+                        <tr>
+                            <th> Date </th>
+                            <th> # </th>
+                            <th>Topic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mi, 20.09.23</td>
+                            <td></td>
+                            <td>HTML</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 27.09.23</td>
+                            <td></td>
+                            <td>CSS</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 04.10.23</td>
+                            <td></td>
+                            <td>Grails, Web, MVC, Test</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 11.10.23</td>
+                            <td></td>
+                            <td>GSP, Template, Taglib, Layout</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 18.10.23</td>
+                            <td></td>
+                            <td>Persistence, DB-Access</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 25.10.23</td>
+                            <td></td>
+                            <td>Simple Security</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 01.11.23</td>
+                            <td></td>
+                            <td>REST, Services</td>
+                        </tr>
+                        <tr class="exercise">
+                            <td>Mi, 08.11.23</td>
+                            <td></td>
+                            <td>ANWESENHEITSPLICHT! Übungsvorbereitung</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 15.11.23</td>
+                            <td></td>
+                            <td>Javascript</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 22.11.23</td>
+                            <td></td>
+                            <td>Responsive / Mobile Web</td>
+                        </tr>
+                        <tr class="holiday">
+                            <td>Mi, 06.12.23</td>
+                            <td></td>
+                            <td>Übungsanlass</td>
+                        </tr>
+                        <tr class="holiday">
+                            <td>Mi, 13.12.23</td>
+                            <td></td>
+                            <td>Übungsanlass</td>
+                        </tr>
+                        <tr class="exercise">
+                            <td>Mi, 20.12.23</td>
+                            <td></td>
+                            <td>WICHTIG! Übungsabgabe</td>
+                        </tr>
+                        <tr>
+                            <td>Mi, 10.01.24</td>
+                            <td></td>
+                            <td>WICHTIG! Übungsabgabe</td>
+                        </tr>
+                        <tr class="exercise">
+                            <td>Mi, 17.01.24</td>
+                            <td></td>
+                            <td>Prüfungsvorbereitung</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"> MSP date to be announced</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+            <article>
+                <h2> Total Effort</h2>
+                <p> Classroom lectures add up to <code>15 * 3h = 45h</code>.</p>
+                <p> Prework and afterwork, including homework adds up to <code>15 * 1h = 15h</code>.</p>
+                <p> The exercise for the continuous assessment grade takes <code>4 * 5h = 20h</code>.</p>
+                <p> Preparation for the final exam will take approximately <code>8h</code>.</p>
+                <p> Writing the final exam takes <code>2h</code>.</p>
+                <p> This makes a total of <code>90h</code>.</p>
+            </article>
+            <article id="criteria">
+                <h2> Passing criteria </h2>
+                <ul>
+                    <li>You have to attend the exercise preparation event.</li>
+                    <li>You have to do the exercise and deliver before the deadline.</li>
+                    <li>You have to attend the <dfn title="Modulschlussprüfung">final exam (MSP)</dfn>.</li>
+                </ul>
+                <p> Your exercise will determine your <abbr title="Erfahrungsnote">continuous assessment grade (EN)</abbr>. </p>
+                <p> EN and MSP together make your final grade. </p>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <address>Dierk König, 5.2B16, mailto: dierk.koenig@fhnw.ch</address>
+    </footer>
+</body>
+
+</html>
