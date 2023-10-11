@@ -8,13 +8,12 @@ import spock.lang.Ignore
  * See http://www.gebish.org/manual/current/ for more instructions
  */
 @Integration
-@Ignore
 class CalculatorSpec extends GebSpec {
 
 
     void "Basic calculation"() {
         when:
-            go '/static/GradeCalculator.html'
+            go '/static/GradeCalculator.html?lang=en'
         then:
         	title == "Grade Calculator"
 
@@ -25,7 +24,7 @@ class CalculatorSpec extends GebSpec {
 
         then: "Result Page is displayed"
             title == "Average"
-//            $("output").text() == "5.5"
+            $("output").text() == "5.5"
 
 
         when: "click on back link"
