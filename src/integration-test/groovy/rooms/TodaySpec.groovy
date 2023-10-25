@@ -15,6 +15,6 @@ class TodaySpec extends GebSpec {
             go '/today/show'
         then:
         	title == "Today"
-            $("output").text().endsWith("2023")
+            $("output").text().startsWith("2023")
     }
 }

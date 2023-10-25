@@ -10,7 +10,7 @@ class TodayController {
         if (offset < 0 ) {
             offsetIsWrong = "error"
         } else {
-            today.plusDays(offset);
+            today = today.plusDays(offset)
         }
         render view:"TodayView", model: [day: today.toString(), offsetClass: offsetIsWrong]
     }
