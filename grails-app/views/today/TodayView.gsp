@@ -11,7 +11,7 @@
 </head>
 <body>
 
-Today is the <output class="${offsetClass}">${ day }</output>.
+Today is the <output class="${ offsetClass }">${ day }</output>.
 
 </body>
 </html>
