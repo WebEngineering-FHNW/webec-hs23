@@ -50,7 +50,7 @@ class SecUserSecRole implements Serializable {
 	}
 
 	static SecUserSecRole create(SecUser secUser, SecRole secRole, boolean flush = false) {
-		def instance = new SecUserSecRole(secUser: secUser, secRole: secRole)
+		def instance = SecUserSecRole.findOrCreateWhere(secUser: secUser, secRole: secRole)
 		instance.save(flush: flush)
 		instance
 	}

@@ -15,16 +15,33 @@ class BootStrap {
      */
     def init    = { servletContext ->
 
-        if (Environment.current == Environment.PRODUCTION) { return; } // guard clause
+        if (Environment.current == Environment.PRODUCTION) { return } // guard clause
+
+        // in production or test, this might already be in the DB
+        SecRole adminRole = save(SecRole.findOrCreateWhere(authority: SecRole.ADMIN))
+        SecRole guestRole = save(SecRole.findOrCreateWhere(authority: SecRole.GUEST))
+
+        SecUser testUser  = save(new SecUser(username: 'me',    password: 'bad'))
+        SecUser guest     = save(new SecUser(username: 'guest', password: 'guest'))
+
+        testUser.withTransaction { tx ->
+            SecUserSecRole.create(testUser, adminRole, true) //flush
+            SecUserSecRole.create(guest,    guestRole, true)
+        }
+
+        // plausibility check
+        assert SecRole.count()          == 2
+        assert SecUser.count()          == 2
+        assert SecUserSecRole.count()   == 2
 
         // in dev and test mode, we populate the database with some sample data to work with
 
         Person dierk  = save(new Person(firstName: "Dierk",  lastName: "König"))
         Person dieter = save(new Person(firstName: "Dieter", lastName: "Holz"))
 
-        Room room_5_1C54 = save(new Room(name: "5.1C54", capacity: 40));
-        Room room_5_2H51 = save(new Room(name: "5.2H51", capacity: 40));
-        Room room_1_013  = save(new Room(name: "1.013" , capacity: 80));
+        Room room_5_1C54 = save(new Room(name: "5.1C54", capacity: 40))
+        Room room_5_2H51 = save(new Room(name: "5.2H51", capacity: 40))
+        Room room_1_013  = save(new Room(name: "1.013" , capacity: 80))
 
         Date mspDate    = new SimpleDateFormat("yyyy-MM-dd").parse("2024-02-06")
 
@@ -57,7 +74,7 @@ class BootStrap {
      * @param domainObject
      * @return Object - the saved domain object
      */
-    static save(domainObject) {
+    static <T> T save(T domainObject) {
         domainObject.save(failOnError: true) // will throw an exception if validation fails
         return domainObject
     }
