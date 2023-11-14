@@ -33,7 +33,7 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 // config types are 'Annotation', 'Requestmap', or 'InterceptUrlMap'
  grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
  grails.plugin.springsecurity.interceptUrlMap =  [
- 	[pattern: '/static/**',      access: ['permitAll']],
+ 	[pattern: '/static/**',      access: ['permitAll']], // static resources are unsecured (HomeSecondSpec running)
  	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
