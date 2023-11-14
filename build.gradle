@@ -60,6 +60,10 @@ dependencies {
     implementation "org.grails.plugins:async"
     implementation "org.grails.plugins:scaffolding"
     implementation "org.grails.plugins:hibernate5"
+
+    // see https://mvnrepository.com/artifact/org.grails.plugins/spring-security-core
+    implementation 'org.grails.plugins:spring-security-core:5.3.0' // added to include security
+
     implementation "org.hibernate:hibernate-core:5.6.11.Final"
     implementation "org.grails.plugins:events"
     implementation "org.grails.plugins:gsp"
