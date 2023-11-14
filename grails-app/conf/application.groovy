@@ -1,9 +1,12 @@
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'rooms.SecUser'
+grails.plugin.springsecurity.userLookup.userDomainClassName =    'rooms.SecUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'rooms.SecUserSecRole'
-grails.plugin.springsecurity.authority.className = 'rooms.SecRole'
+grails.plugin.springsecurity.authority.className =               'rooms.SecRole'
+
+grails.plugin.springsecurity.logout.postOnly = false // allow logout via get url /logout
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
