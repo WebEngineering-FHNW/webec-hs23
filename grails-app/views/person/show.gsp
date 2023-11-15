@@ -32,9 +32,10 @@
                             <li class="fieldcontain">
                                 <span id="bookings-label" class="property-label">Bookings</span>
                                 <div class="property-value" aria-labelledby="bookings-label"
-                                     style="display: grid; grid-template-columns: repeat(4, max-content); gap: 0 1em;">
+                                     style="display: grid; grid-template-columns: repeat(5, max-content); gap: 0 1em;">
                                     <% def dateFormat = new SimpleDateFormat("dd. MMM yyyy") %>
                                     <g:each in="${this.bookings}" var="booking">
+                                        <span>${booking.purpose}</span>
                                         <span>${booking.room.name}</span>
                                         <span>(${booking.room.capacity})</span>
                                         <span>${ dateFormat.format(booking.bookingDate)}</span>
