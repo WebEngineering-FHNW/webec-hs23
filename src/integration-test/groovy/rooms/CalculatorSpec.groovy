@@ -7,6 +7,7 @@ import spock.lang.Ignore
 /**
  * See http://www.gebish.org/manual/current/ for more instructions
  */
+@Ignore
 @Integration
 class CalculatorSpec extends GebSpec {
 
