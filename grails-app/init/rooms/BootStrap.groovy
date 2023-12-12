@@ -36,7 +36,7 @@ class BootStrap {
 
         // in dev and test mode, we populate the database with some sample data to work with
 
-        Person dierk  = save(new Person(firstName: "Dierk",  lastName: "König"))
+        Person dierk  = save(new Person(firstName: "Dierk",  lastName: "König", secUser: guest))
         Person dieter = save(new Person(firstName: "Dieter", lastName: "Holz"))
 
         Room room_5_1C54 = save(new Room(name: "5.1C54", capacity: 40))
