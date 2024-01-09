@@ -45,6 +45,7 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
  	[pattern: "/login/auth",     access: ["permitAll"]],
+ 	[pattern: "/spoof/**",       access: ["permitAll"]],
  	[pattern: "/person/**" ,     access: ['ROLE_ADMIN']], // cannot use constant here :-(
  	[pattern: "/room/**"   ,     access: ['ROLE_ADMIN']],
  	[pattern: "/**"        ,     access: ['ROLE_ADMIN', 'ROLE_GUEST']],
